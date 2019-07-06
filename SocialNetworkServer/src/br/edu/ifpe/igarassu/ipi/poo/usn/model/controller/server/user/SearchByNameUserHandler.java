@@ -32,7 +32,7 @@ import br.edu.ifpe.igarassu.ipi.poo.usn.model.controller.server.AbstractHandler;
 
 /**
  *
- * Handles a request to search for users by their names.
+ * Handles a request to search for users by their usernames.
  * 
  * @author Allan Diego Silva Lima - allan.lima@igarassu.ifpe.edu.br
  *
@@ -52,7 +52,7 @@ public class SearchByNameUserHandler extends AbstractHandler {
 
 	/**
 	 * 
-	 * Handles a request to search for users by their names.
+	 * Handles a request to search for users by their usernames.
 	 * 
 	 * @param exchange the object containing the metadata of the request
 	 * 
@@ -64,15 +64,15 @@ public class SearchByNameUserHandler extends AbstractHandler {
 
 			Map<String, Object> parameters = parsePostParameters(exchange);
 
-			Object parameter = parameters.get("name");
-			String name = "";
+			Object parameter = parameters.get("username");
+			String username = "";
 
 			if (parameter != null) {
-				name = parameter.toString();
+				username = parameter.toString();
 			}
 
-			System.out.println("search user: " + name);
-			List<User> users = super.getFacade().searchUserByName(name);
+			System.out.println("search user: " + username);
+			List<User> users = super.getFacade().searchUserByName(username);
 
 			ObjectMapper mapper = new ObjectMapper();
 

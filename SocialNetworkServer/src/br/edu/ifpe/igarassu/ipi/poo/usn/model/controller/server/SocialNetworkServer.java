@@ -51,12 +51,12 @@ public class SocialNetworkServer {
 		server.start();
 	}
 
-	private static void populateUsers(UserSocialNetworkFacade facade) {
-		facade.addUser(new User(0, "Carla", "312"));
-		facade.addUser(new User(1, "Carlos", "541"));
-		facade.addUser(new User(2, "Marcos", "451"));
-		facade.addUser(new User(3, "Joao", "123"));
-		facade.addUser(new User(4, "Joana", "171"));
+        private static void populateUsers(UserSocialNetworkFacade facade) {
+		facade.addUser(new User(0, "katty", "katherine@mail.com", "312"));
+		facade.addUser(new User(1, "Carlord", "carlos@mail.com", "541"));
+		facade.addUser(new User(2, "Marcopolo", "marcos@mail.com", "451"));
+		facade.addUser(new User(3, "Jao", "john@mail.com", "123"));
+		facade.addUser(new User(4, "Dayse", "dayse@mail.com", "171"));
 	}
 
 }

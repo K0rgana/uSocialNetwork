@@ -49,12 +49,12 @@ public interface UserDAO {
 
 	/**
 	 * 
-	 * Search for users containing the string <code>name</code> on their names
+	 * Search for users containing the string <code>username</code> on their usernames
 	 * 
-	 * @param name the name to be searched
+	 * @param username the username to be searched
 	 * 
-	 * @return a list of <code>Users</code> the contain the string <code>name</code> on their names, if there is no results on the search, the method will return an empty list.
+	 * @return a list of <code>Users</code> the contain the string <code>username</code> on their usernames, if there is no results on the search, the method will return an empty list.
 	 */
-	public List<User> searchByName(String name);
+	public List<User> searchByName(String username);
 	
 }

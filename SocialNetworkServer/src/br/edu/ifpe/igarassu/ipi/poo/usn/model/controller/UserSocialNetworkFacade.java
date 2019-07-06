@@ -11,6 +11,7 @@
 
 package br.edu.ifpe.igarassu.ipi.poo.usn.model.controller;
 
+import br.edu.ifpe.igarassu.ipi.poo.usn.data.entity.user.Post;
 import java.util.List;
 
 import br.edu.ifpe.igarassu.ipi.poo.usn.data.entity.user.User;
@@ -60,13 +61,13 @@ public interface UserSocialNetworkFacade {
 
 	/**
 	 * 
-	 * Search for users containing the string <code>name</code> on their names
+	 * Search for users containing the string <code>username</code> on their usernames
 	 * 
-	 * @param name the name to be searched
+	 * @param username the username to be searched
 	 * 
-	 * @return a list of <code>Users</code> the contain the string <code>name</code> on their names, if there is no results on the search, the method will return an empty list.
+	 * @return a list of <code>Users</code> the contain the string <code>username</code> on their usernames, if there is no results on the search, the method will return an empty list.
 	 */
-	public List<User> searchUserByName(String name);
+	public List<User> searchUserByName(String username);
 
 	/**
 	 * 
@@ -75,5 +76,7 @@ public interface UserSocialNetworkFacade {
 	 * @param id the id of the user to be removed
 	 */
 	public void removeUserById(int id);
+
+    public void addPost(Post newPost);
 
 }

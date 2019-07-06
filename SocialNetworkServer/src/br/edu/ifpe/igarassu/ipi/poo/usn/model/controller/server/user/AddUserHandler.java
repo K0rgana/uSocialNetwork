@@ -57,13 +57,14 @@ public class AddUserHandler extends AbstractHandler {
 			Map<String, Object> parameters = parsePostParameters(exchange);
 
 			// gets the data nedded to crate a new user
-			String name = parameters.get("name").toString();
+			String username = parameters.get("username").toString();
+                        String email = parameters.get("email").toString();
 			String password = parameters.get("password").toString();
 			int id = super.getFacade().numberOfUsers();
 
-			System.out.println("add user " + id + " | " + name + " | " + password);
+			System.out.println("add user " + id + " | " + username + " | " + email + " | " + password);
 
-			User newUser = new User(id, name, password);
+			User newUser = new User(id, username, email, password);
 
 			// TODO handle errors correctly
 

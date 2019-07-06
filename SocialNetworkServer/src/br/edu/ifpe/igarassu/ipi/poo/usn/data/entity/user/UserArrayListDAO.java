@@ -28,20 +28,20 @@ public class UserArrayListDAO extends ArrayListDAO<User> implements UserDAO {
 	
 	/**
 	 * 
-	 * Search for users containing the string <code>name</code> on their names
+	 * Search for users containing the string <code>username</code> on their usernames
 	 * 
-	 * @param name the name to be searched
+	 * @param username the username to be searched
 	 * 
-	 * @return a list of <code>Users</code> the contain the string <code>name</code> on their names, if there is no results on the search, the method will return an empty list.
+	 * @return a list of <code>Users</code> the contain the string <code>username</code> on their usernames, if there is no results on the search, the method will return an empty list.
 	 */
 	@Override
-	public List<User> searchByName(String name) {
+	public List<User> searchByName(String username) {
 		List<User> result = new ArrayList<User>(); // the list with users to be returned
 		
 		// notice who the code utilizes an Iterator in order to navigate through all elements on the collection
 		for (Iterator<User> iterator = this.list().iterator(); iterator.hasNext();) {
 			User element = iterator.next();
-			if (element.getName().toLowerCase().contains(name.toLowerCase())) {
+			if (element.getUsername().toLowerCase().contains(username.toLowerCase())) {
 				result.add(element);
 			}
 		}

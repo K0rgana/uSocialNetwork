@@ -11,6 +11,7 @@
 
 package br.edu.ifpe.igarassu.ipi.poo.usn.model.controller;
 
+import br.edu.ifpe.igarassu.ipi.poo.usn.data.entity.user.Post;
 import java.util.List;
 
 import br.edu.ifpe.igarassu.ipi.poo.usn.data.entity.user.User;
@@ -78,17 +79,17 @@ public class SocialNetworkFacade implements UserSocialNetworkFacade {
 
 	/**
 	 * 
-	 * Search for users containing the string <code>name</code> on their names
+	 * Search for users containing the string <code>username</code> on their usernames
 	 * 
-	 * @param name the name to be searched
+	 * @param username the username to be searched
 	 * 
-	 * @return a list of <code>Users</code> the contain the string <code>name</code>
-	 *         on their names, if there is no results on the search, the method will
+	 * @return a list of <code>Users</code> the contain the string <code>username</code>
+	 *         on their usernames, if there is no results on the search, the method will
 	 *         return an empty list.
 	 */
 	@Override
-	public List<User> searchUserByName(String name) {
-		return this.UsersDAO.searchByName(name);
+	public List<User> searchUserByName(String username) {
+		return this.UsersDAO.searchByName(username);
 	}
 
 	/**
@@ -102,5 +103,10 @@ public class SocialNetworkFacade implements UserSocialNetworkFacade {
 		this.UsersDAO.removeById(id);
 
 	}
+
+    @Override
+    public void addPost(Post newPost) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
 }
